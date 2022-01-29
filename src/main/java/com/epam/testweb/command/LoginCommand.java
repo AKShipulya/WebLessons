@@ -19,9 +19,6 @@ public class LoginCommand implements Command {
 
         boolean valid = service.login(login, password);
         if (valid) {
-//            HttpSession session = req.getSession(true);
-//            session.setAttribute("login", login);
-//            session.setAttribute("role", "admin");
             req.getSession().setAttribute("user", "admin");
             return "WEB-INF/view/main.jsp";
         } else {
